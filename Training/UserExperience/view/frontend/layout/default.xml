@@ -7,7 +7,14 @@
     <body>
         <referenceContainer name="footer-container">
             <block name="custom.block1" template="Training_UserExperience::hello.phtml" before="-" />
+            <block name="custom.block3" template="Training_UserExperience::parent.phtml">
+            </block>
         </referenceContainer>
 <!--        <referenceBlock name="top.search" template="Training_UserExperience::form.phtml" />-->
+        <referenceBlock name="custom.block3">
+            <block name="custom.block4" as="cblock1" template="Training_UserExperience::child.phtml" />
+            <block name="custom.block5" as="cblock2" template="Training_UserExperience::child.phtml" />
+        </referenceBlock>
+
     </body>
 </page>

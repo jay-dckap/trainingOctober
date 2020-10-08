@@ -8,6 +8,33 @@
     <body>
         <referenceContainer name="content">
             <block name="custom.block" template="Training_UserExperience::hello.phtml" />
+            <block name="custom.block.sample" template="Training_UserExperience::sample.phtml" />
+            <block class="Training\UserExperience\Block\Custom"
+                   name="custom.block.class"
+                   template="Training_UserExperience::account.phtml" />
+            <block name="custom.block.class.view" template="Training_UserExperience::model.phtml">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Training\UserExperience\ViewModel\Custom</argument>
+                </arguments>
+            </block>
+            <block name="custom.arguments.one" template="Training_UserExperience::arguments.phtml">
+                <arguments>
+                    <argument name="color" xsi:type="string">red</argument>
+                    <argument name="items" xsi:type="array">
+                        <item name="cms" xsi:type="string">hello</item>
+                        <item name="default" xsi:type="string">hey</item>
+                    </argument>
+                </arguments>
+            </block>
+            <block name="custom.arguments.two" template="Training_UserExperience::arguments.phtml">
+                <arguments>
+                    <argument name="color" xsi:type="string">blue</argument>
+                    <argument name="items" xsi:type="array">
+                        <item name="cms" xsi:type="string">hello</item>
+                        <item name="default" xsi:type="string">hey</item>
+                    </argument>
+                </arguments>
+            </block>
         </referenceContainer>
         <move element="custom.block1" destination="content" after="custom.block" />
 <!--        <referenceBlock name="custom.block" template="Training_UserExperience::hello1.phtml" />-->

@@ -1,0 +1,6 @@
+<p style="color: <?php echo $block->getData("color"); ?>">I am from arguments</p>
+<?php $items = $block->getData("items"); ?>
+<?php foreach ($items as $key => $value): ?>
+    <?php echo $key; ?>
+    <?php echo $value; ?>
+<?php endforeach; ?>
