@@ -2,5 +2,17 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Training\WelcomeMessage\Api\VisitorLocationInterface" type="Training\WelcomeMessage\Model\VisitorLocation" />
+    <preference for="Training\WelcomeMessage\Api\IpApiInterface" type="Training\WelcomeMessage\Model\IpApiCacher" />
     <preference for="Training\WelcomeMessage\Api\Data\LocationDTOInterface" type="Training\WelcomeMessage\Model\Data\LocationDTO" />
+<!--    <preference for="Magento\Theme\Block\Html\Header" type="Training\WelcomeMessage\Block\Header" />-->
+    <type name="Training\WelcomeMessage\Model\IpApiCacher">
+        <arguments>
+            <argument name="ipApi" xsi:type="object">Training\WelcomeMessage\Model\IpApi</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Theme\Block\Html\Header">
+        <plugin name="header_welcome_plugin"
+                type="Training\WelcomeMessage\Model\Plugin\Header"
+                sortOrder="10" />
+    </type>
 </config>
