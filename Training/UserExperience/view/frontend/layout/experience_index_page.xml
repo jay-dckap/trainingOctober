@@ -35,13 +35,13 @@
                     </argument>
                 </arguments>
             </block>
+            <block name="custom.block.three" template="Training_UserExperience::parent.phtml">
+                <block name="custom.block.four" as="cblock1" template="Training_UserExperience::child.phtml" />
+                <block name="custom.block.five" as="cblock2" template="Training_UserExperience::child.phtml" />
+            </block>
         </referenceContainer>
-        <move element="custom.block1" destination="content" after="custom.block" />
-<!--        <referenceBlock name="custom.block" template="Training_UserExperience::hello1.phtml" />-->
-        <referenceBlock name="custom.block">
-            <arguments>
-                <argument name="template" xsi:type="string">Training_UserExperience::hello1.phtml</argument>
-            </arguments>
-        </referenceBlock>
+<!--        <move element="custom.block1" destination="content" after="custom.block" />-->
+        <referenceBlock name="custom.block" template="Training_UserExperience::hello1.phtml" />
+
     </body>
 </page>

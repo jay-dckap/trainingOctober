@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="top.search" template="Training_UserExperience::form.mini.phtml" />
+        <referenceBlock name="product.info.details">
+            <block name="custom.tab" template="Training_UserExperience::hello.phtml" group="detailed_info">
+                <arguments>
+                    <argument name="sort_order" xsi:type="string">50</argument>
+                    <argument name="title" xsi:type="string">Custom</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+<!--        <move element="product.info.options.wrapper" destination="custom.tab" as="custom.tabs.data" />-->
+        <move element="catalog.product.related" destination="custom.tab" as="custom.tabs.data" />
+    </body>
+</page>

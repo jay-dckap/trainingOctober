@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="training_pets" comment="Pets Information">
+        <column xsi:type="int" name="pet_id" padding="10" unsigned="true" identity="true" nullable="false" comment="Pet ID"/>
+        <column xsi:type="int" name="customer_id" padding="10" unsigned="true" nullable="false" comment="Customer ID" />
+        <column xsi:type="varchar" name="pet_name" length="100" nullable="false" comment="Pet Name" />
+        <column xsi:type="varchar" name="pet_type" length="100" default="Cat" nullable="false" comment="Pet Type" />
+        <column xsi:type="varchar" name="mobile_number" onCreate="migrateDataFrom(phone2)" length="100" nullable="false" comment="Phone 2" />
+        <column xsi:type="timestamp" name="created_at" on_update="false" default="CURRENT_TIMESTAMP" nullable="false" comment="Created At" />
+        <column xsi:type="timestamp" name="updated_at" on_update="true" default="CURRENT_TIMESTAMP" nullable="false" comment="Updated At" />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="pet_id" />
+        </constraint>
+        <constraint xsi:type="foreign"
+                    referenceId="TRAINING_PETS_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID"
+                    table="training_pets"
+                    column="customer_id"
+                    referenceTable="customer_entity"
+                    referenceColumn="entity_id"
+                    onDelete="CASCADE" />
+        <index referenceId="TRAINING_PETS_PET_NAME" indexType="btree">
+            <column name="pet_name" />
+        </index>
+    </table>
+</schema>
