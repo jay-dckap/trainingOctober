@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Training\PetsRepository\Api\PetsRepositoryInterface" type="Training\PetsRepository\Model\PetsRepository" />
+    <preference for="Training\PetsRepository\Api\Data\PetsDTOInterface" type="Training\PetsRepository\Model\Data\PetsDTO" />
+    <preference for="Training\PetsRepository\Api\PetsSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+</config>

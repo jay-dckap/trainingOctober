@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Sales::sales">
+                    <resource id="Training_PetsAdmin::welcome_head" title="Welcome Head" translate="title" sortOrder="100">
+                        <resource id="Training_PetsAdmin::welcome" title="Welcome" translate="title" sortOrder="100" />
+                    </resource>
+                </resource>
+                <resource id="Training_PetsAdmin::admin_router" title="Admin Router" translate="title" sortOrder="100">
+                    <resource id="Training_PetsAdmin::admin_router_child" title="Admin Router Child" translate="title" sortOrder="100" />
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

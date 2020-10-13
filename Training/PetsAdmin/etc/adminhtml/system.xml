@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="training" translate="label" sortOrder="20">
+            <label>Training</label>
+        </tab>
+        <section id="pets" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Pets</label>
+            <tab>training</tab>
+            <resource>Training_PetsAdmin::admin_router</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="test" type="select" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Test Field</label>
+                    <comment>This is a test field</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="code" type="text" translate="label" sortOrder="20" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Code</label>
+                </field>
+                <field id="file_upload" type="image" translate="label" sortOrder="30" showInWebsite="1" showInStore="1" showInDefault="1">
+                    <label>File Upload</label>
+                    <backend_model>Training\PetsAdmin\Model\Backend\Jpg</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">upload</upload_dir>
+                    <base_url type="media" scope_info="1">upload</base_url>
+                </field>
+                <field id="password" type="obscure" translate="label" sortOrder="40" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Password</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <depends>
+                        <field id="test">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

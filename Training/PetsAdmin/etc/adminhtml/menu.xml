@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Training_PetsAdmin::welcome_head"
+             title="Welcome Head"
+             translate="title"
+             module="Training_PetsAdmin"
+             sortOrder="50"
+             dependsOnModule="Training_PetsAdmin"
+             resource="Training_PetsAdmin::welcome_head"
+             parent="Magento_Sales::sales" />
+        <add id="Training_PetsAdmin::welcome"
+             title="Welcome"
+             translate="title"
+             module="Training_PetsAdmin"
+             sortOrder="50"
+             dependsOnModule="Training_PetsAdmin"
+             resource="Training_PetsAdmin::welcome"
+             parent="Training_PetsAdmin::welcome_head"
+             action="pets/index/index"/>
+        <add id="Training_PetsAdmin::admin_router"
+             title="Admin Router"
+             translate="title"
+             module="Training_PetsAdmin"
+             sortOrder="50"
+             dependsOnModule="Training_PetsAdmin"
+             resource="Training_PetsAdmin::admin_router" />
+        <add id="Training_PetsAdmin::admin_router_child"
+             title="Admin Router Child"
+             translate="title"
+             module="Training_PetsAdmin"
+             sortOrder="50"
+             dependsOnModule="Training_PetsAdmin"
+             resource="Training_PetsAdmin::admin_router_child"
+             parent="Training_PetsAdmin::admin_router"
+             action="pets/index/index"/>
+    </menu>
+</config>
